@@ -2,6 +2,7 @@
 
 
 import cy.Define
+import common
 
 
 def func():
@@ -12,3 +13,4 @@ def func():
 
 if __name__ == '__main__':
     func()
+    common.test()
