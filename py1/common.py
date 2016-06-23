@@ -26,4 +26,11 @@ def power(x, n=2):
         n -= 1
         s = s * x
     return s
+    
 
+# 递归函数
+def fact(n):
+    if n == 1:
+        return 1
+    return n * fact(n - 1)
+    

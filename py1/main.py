@@ -15,7 +15,9 @@ def func():
     print(common.my_abs(3.36))
 
     print(common.power(4, 5))
-
+    print(common.fact(5))
+    
+    
 # 主函数
 if __name__ == '__main__':
     func()
