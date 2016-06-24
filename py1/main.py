@@ -4,8 +4,11 @@
 import cy.Define
 import common
 
+import sys
+import argparse
 
-def func():
+
+def func(argv):
     print("hello")
     print(cy.Define.strName)
     print(cy.Define.nAge)
@@ -17,8 +20,16 @@ def func():
     print(common.power(4, 5))
     print(common.fact(5))
     
-    
+    p = argparse.ArgumentParser("help123")
+    p.add_argument('-c', nargs='?',default='cy')
+    p.add_argument('-y', nargs='?', default='wy')
+
+    args = p.parse_args(argv[1:])
+    if args.c == 'cy':
+        print("-cy")
+
 # 主函数
 if __name__ == '__main__':
-    func()
+    argv = sys.argv
+    func(argv)
 
