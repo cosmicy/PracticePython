@@ -19,7 +19,7 @@ def func(argv):
 
     print(common.power(4, 5))
     print(common.fact(5))
-    
+
     p = argparse.ArgumentParser("help123")
     p.add_argument('-c', nargs='?',default='cy')
     p.add_argument('-y', nargs='?', default='wy')
@@ -27,6 +27,9 @@ def func(argv):
     args = p.parse_args(argv[1:])
     if args.c == 'cy':
         print("-cy")
+
+    # clean
+    print("Clean my computor.")
 
 # 主函数
 if __name__ == '__main__':
