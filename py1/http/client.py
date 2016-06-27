@@ -14,7 +14,7 @@ try:
     print(response.status)
     print(response.reason)
     print(response.read())
-except(Exception, e):
+except Exception as e:
     print(e)
 finally:
     if httpClient:
