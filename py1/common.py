@@ -5,6 +5,8 @@
 def compare(a,b):
     return a < b
 
+    # 原来的cmp，使用functools.cmp_to_key 即可。
+
 
 def test():
     print(compare(3, 7))
