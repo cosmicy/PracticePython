@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 #coding=utf8
 
-import http.client
+import http.TestClient
 
 httpClient = None
 
 try:
-    httpClient = http.client.HTTPConnection('localhost', 46010, timeout=30)
+    httpClient = http.TestClient.HTTPConnection('localhost', 46010, timeout=30)
 
     # httpClient.request('POST', '/api/account/register')
     # #response是HTTPResponse对象
