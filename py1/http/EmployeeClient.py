@@ -3,7 +3,8 @@
 
 import http.client
 import urllib
-from urllib import request
+
+import urllib.request
 
 httpClient = None
 
@@ -14,13 +15,13 @@ def Get(httpClient):
 	return httpClient.getresponse()
 
 def Post(httpClient):
-	values = {"FirstName":"sss","LastName":"ddd","Department":"3"}
+	values = {"FirstName":"sss","LastName":"ddd","Department":"5"}
 	data = urllib.parse.urlencode(values)
 	data = data.encode('utf-8')
 
 	url = "http://localhost:5245/api/employees"
 
-	return request.urlopen(url,data)
+	return urllib.request.urlopen(url,data)
 
 
 try:
