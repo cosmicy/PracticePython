@@ -8,6 +8,13 @@ import urllib.request
 
 httpClient = None
 
+#url = "http://172.16.11.177:8050/api/values"
+
+#ip = '172.16.11.177'
+#port = 8050
+
+ip = 'localhost'
+port = 5245
 
 
 def Get(httpClient):
@@ -19,15 +26,16 @@ def Post(httpClient):
 	data = urllib.parse.urlencode(values)
 	data = data.encode('utf-8')
 
-	url = "http://localhost:5245/api/employees"
-
+	#url = "http://localhost:5245/api/employees"
+    url = ip + ":" + port + "/api/employees"
 	return urllib.request.urlopen(url,data)
 
 
 try:
-    httpClient = http.client.HTTPConnection('localhost', 5245, timeout=30)
+    httpClient = http.client.HTTPConnection(ip, port, timeout=30)
 
-    response = Post(httpClient)
+    #²»Í¬·½·¨µ÷ÓÃ
+    response = Get(httpClient)
 
     print(response.status)
     print(response.reason)
