@@ -31,6 +31,9 @@ def func(argv):
     # clean
     print("Clean my computor.")
 
+    # Mac
+    print("Mac下快速搜索或启动：Command＋Space")
+
 # 主函数
 if __name__ == '__main__':
     argv = sys.argv
