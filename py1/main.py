@@ -34,6 +34,9 @@ def func(argv):
     # Mac
     print("Mac下快速搜索或启动：Command＋Space")
 
+    #game
+    print("game save git")
+
 # 主函数
 if __name__ == '__main__':
     argv = sys.argv
