@@ -36,6 +36,10 @@ def func(argv):
 
     #game
     print("game save git")
+    
+    #time
+    print("E=mc^2")
+    
 
 # 主函数
 if __name__ == '__main__':
