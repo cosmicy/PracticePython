@@ -16,19 +16,19 @@ def getTitle(soup): #获取标题,文件夹名
 
 def getImgSrcs(soup): #如何获取本页的img src
     #<div class="main-body"><p><img src=
-    imgs = soup.select(".main-body img")
+    imgs = soup.select(".main-image p img")
     srcs = [img["src"] for img in imgs]
     return srcs
 
 def has_next_page(soup): #还有下一页没啊
     #<div class="link_pages"> <a href=""><span>下一页</span></a></div>
-    nav = soup.find("div",class_="link_pages")
+    nav = soup.find("div",class_="pagenavi")
     a = (nav.find_all('a'))[-1] #最后一个a标签
-    return a.span and a.span.string == u'下一页'
+    return a.span and a.span.string == u'下一页»'
 
 def get_next_page(soup): #获取下一页地址
     #<div class="link_pages"> <a href=""><span>下一页</span></a></div>
-    nav = soup.find("div",class_="link_pages")
+    nav = soup.find("div",class_="pagenavi")
     a = (nav.find_all('a'))[-1] #最后一个a标签
     return a["href"]
 #################################################################################
@@ -79,7 +79,7 @@ elif len(sys.argv) == 1: #正常运行时,提示帮助信息
 else:   #正常指定下载
     argUrl = sys.argv[1] #python [down.py http://xxxx]
 
-soup = BeautifulSoup(request(argUrl)) #创建soup
+soup = BeautifulSoup(request(argUrl, "utf8")) #创建soup
 title = getTitle(soup) #如何获取标题,只获取当前页
 print(u"图片系列为 : {0}".format(title))
 
@@ -101,7 +101,7 @@ def downImg(soup):
         ext = src[dot:] # .jpg
         path = u"{0}/{1}/{2:02}{3}".format(IMAGE_DIR,title,index,ext)
         print(u"正在下载第{0:02}张 : {1}".format(index,src))
-        urllib.urlretrieve(src,path)
+        urllib.request.urlretrieve(src,path)
         index+=1
 
 downImg(soup) #下载本页的图片
@@ -109,5 +109,5 @@ downImg(soup) #下载本页的图片
 #本页下载完成,点击下一页
 while has_next_page(soup):
     next_url = get_next_page(soup) #获取下一页地址
-    soup = BeautifulSoup(request(next_url)) #构建下一页的soup
+    soup = BeautifulSoup(request(next_url, "utf8")) #构建下一页的soup
     downImg(soup)
