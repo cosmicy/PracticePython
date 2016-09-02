@@ -1,10 +1,11 @@
+#coding=utf-8
 #py文件,建立后即可高亮
 import os
 from os.path import join,getsize
 
 print("hello")
 
-dirs=os.listdir()
+dirs=os.listdir(".")
 print(dirs)
 
 def getdirsize(dir):
