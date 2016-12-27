@@ -22,4 +22,4 @@ github上的一个python挑战题目
 手机上的Solo学习python
 
 ## VSCodePy
-用VSCodePy建立的Python目录，现在整个目录都在VSCode下管理
+用VSCodePy建立的Python目录，现在整个目录都在VSCode下管理，此目录用于测试vscode的python功能
