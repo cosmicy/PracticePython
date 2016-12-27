@@ -1,21 +1,30 @@
-#coding=utf-8
-#py文件,建立后即可高亮
+# coding=utf-8
+
+'''
+列出目录下所有文件夹和文件的列表，所占大小
+py文件,建立后即可高亮
+F5开始调试
+'''
+
+
 import os
-from os.path import join,getsize
+from os.path import join, getsize
 
-print("hello")
 
-dirs=os.listdir(".")
-print(dirs)
-
-def getdirsize(dir):
+def getdirsize(dirfile):
+    '''doc'''
     size = 0
-    for root, dirs, files in os.walk(dir):
+    for root, files in os.walk(dirfile):
         size += sum([getsize(join(root, name)) for name in files])
     return size
 
-for dir in dirs:
-    if(os.path.isdir(dir)):
-        print(getdirsize(dir))
+print("hello")
+
+DIRS = os.listdir(".")
+print(DIRS)
+
+for d in DIRS:
+    if os.path.isdir(d):
+        print(d + "\t\t" + str(getdirsize(d)))
     else:
-        print(getsize(dir))
+        print(d + "\t\t" + str(getsize(d)))
