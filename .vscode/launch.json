@@ -58,7 +58,7 @@
             "stopOnEntry": true,
             "pythonPath": "${config.python.pythonPath}",
             "program": "${file}",
-            "cwd": "null",
+            "cwd": "${workspaceRoot}",
             "console": "integratedTerminal",
             "debugOptions": [
                 "WaitOnAbnormalExit",
