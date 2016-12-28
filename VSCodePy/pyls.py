@@ -14,7 +14,7 @@ from os.path import join, getsize
 def getdirsize(dirfile):
     '''doc'''
     size = 0
-    for root, files in os.walk(dirfile):
+    for root, dirs, files in os.walk(dirfile):
         size += sum([getsize(join(root, name)) for name in files])
     return size
 
