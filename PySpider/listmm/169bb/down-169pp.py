@@ -24,11 +24,11 @@ def downImg():
 
 def getImgSrcs():
     srcs = []
-    time = '201612';
-    cat = '068';
-    total = 50;
+    time = '201702';
+    cat = '102';
+    total = 45;
     url = 'http://724.169pp.net/169mm/'
-    for i in range(1,total):
+    for i in range(1,total+1):
         pass
         urlsrc = url + time + '/' + cat + '/' + str(i)+ '.jpg'
         srcs.append(urlsrc)
