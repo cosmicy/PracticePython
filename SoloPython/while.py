@@ -1,6 +1,6 @@
 i = 0
 while True:
-    i = i +1
+    i = i + 1
     if i == 2:
         print("Skipping 2")
         continue
